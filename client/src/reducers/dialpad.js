@@ -1,5 +1,6 @@
 import {
   APPEND_DIAL_VALUE,
+  REMOVE_DIAL_VALUE,
   REMOVE_LAST_CHAR_DIAL_VALUE,
 } from '../actions/types';
 
@@ -9,6 +10,8 @@ const dialpad = (state = '', action) => {
       return state + action.payload;
     case REMOVE_LAST_CHAR_DIAL_VALUE:
       return state.slice(0, state.length - 1);
+    case REMOVE_DIAL_VALUE:
+      return '';
     default:
       return state;
   }
